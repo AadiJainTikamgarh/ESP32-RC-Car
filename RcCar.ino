@@ -8,21 +8,21 @@ const char* password = "esp32rccar";
 WebServer server(80);
 
 // Motor control pins
-#define M1_IN1 25  
-#define M1_IN2 33
-#define M1_EN 26
+#define M1_IN1 33  
+#define M1_IN2 32
+#define M1_EN 25
 
-#define M2_IN1 14
-#define M2_IN2 12
-#define M2_EN 27
+#define M2_IN1 19
+#define M2_IN2 18
+#define M2_EN 5
 
-#define M3_IN1 4
-#define M3_IN2 22
-#define M3_EN 2
+#define M3_IN1 14
+#define M3_IN2 27
+#define M3_EN 12
 
-#define M4_IN1 18
-#define M4_IN2 21
-#define M4_EN 5
+#define M4_IN1 16
+#define M4_IN2 17
+#define M4_EN 4
 
 
 void moveForward() {
@@ -141,7 +141,7 @@ void stopMotors() {
 void moveLeft() {
   digitalWrite(M1_IN1, LOW);
   digitalWrite(M1_IN2, HIGH);
-  analogWrite(M1_EN, 110);
+  analogWrite(M1_EN, 0);
 
   digitalWrite(M2_IN1, LOW);
   digitalWrite(M2_IN2, HIGH);
@@ -187,7 +187,7 @@ void moveRight() {
 
   digitalWrite(M2_IN1, LOW);
   digitalWrite(M2_IN2, HIGH);
-  analogWrite(M2_EN, 110);
+  analogWrite(M2_EN, 0);
 
   digitalWrite(M3_IN1, LOW);
   digitalWrite(M3_IN2, HIGH);
